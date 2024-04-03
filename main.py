@@ -10,19 +10,16 @@ def fact(x):
 def fib(n):
     if n < 2:
         return n
-    elif n>=2:
+    elif n >= 2:
         return fib(n - 1) + fib(n-2)
 
 
 def matryoshka(z):
-    if z == 1:
-        print('маленькая матрешечка 1')
-    elif z >= 1:
-
+    if z == 0:
+        print('маленькая матрешечка 0')
+    elif z > 0:
         print(f'верх матрешки {z}')
-        print(f'верх матрешки {z-1}')
-        print('маленькая матрешечка 1')
-        print(f'низ матрешки {z-1}')
+        matryoshka(z-1)
         print(f'низ матрешки {z}')
 
 
@@ -35,8 +32,8 @@ def gdc(a, b):
         return gdc(a, b-a)
 
 
-print(gdc(, ))
+# print(gdc(, ))
 
-# matryoshka(4)
+matryoshka(4)
 
 # print(fib(3))
