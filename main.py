@@ -1,5 +1,3 @@
-
-
 def fact(x):
     if x <= 1:
         return 1
@@ -24,16 +22,36 @@ def matryoshka(z):
 
 
 def gdc(a, b):
-    if a == b:
+    if b == 0:
         return a
-    elif a > b:
-        return gdc(a-b, b)
-    elif a < b:
-        return gdc(a, b-a)
+    return gdc(b, a % b)
 
+
+def pow1(a, n):
+    print('лопух', a, n)
+    if n == 0:
+        return 1
+    return a*pow1(a, n-1)
+
+
+def pow2(a, n):
+    print('щавель', a, n)
+    if n == 0:
+        return 1
+    elif n % 2 != 0:
+        return a * pow2(a, n - 1)
+    elif n % 2 == 0:
+        return pow2(a*a, n // 2)
+
+
+print(pow1(4, 10))
+
+print(pow2(4, 10))
+
+# print(gdc(42, 48))
 
 # print(gdc(, ))
 
-matryoshka(4)
+# matryoshka(4)
 
 # print(fib(3))
