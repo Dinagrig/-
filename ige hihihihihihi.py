@@ -39,14 +39,14 @@ def f_7(n):
 
 f_9_list = [1000]
 
-
 def f_9(n):
     if n >= 1000:
-        return 1000
+
+        return f_9_list[0]
     elif n < 1000 and n % 2 == 1:
-        None
+        n * f_9(n+1)
     elif n < 1000 and n % 2 == 0:
-        None
+        n * (f_9(n+1)/2)
 
 print(1, f_1(5))
 print(3, f_3(6))
