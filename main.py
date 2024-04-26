@@ -44,9 +44,23 @@ def pow2(a, n):
         return pow2(a*a, n // 2)
 
 
-print(pow1(4, 10))
+fib_list = [0, 1]
 
-print(pow2(4, 10))
+
+def fib_dynamic(n):
+    if n >= len(fib_list):
+        for i in range(len(fib_list), n + 1):
+            fib_list.append(fib_dynamic(i - 1) + fib_dynamic(i - 2))
+    return fib_list[n]
+
+
+for i in range(51):
+    print(i, fib_dynamic(i))
+
+
+# print(pow1(4, 10))
+
+# print(pow2(4, 10))
 
 # print(gdc(42, 48))
 

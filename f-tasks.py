@@ -49,25 +49,28 @@ F10_list = [0]
 
 def f_10(n):
     for i in range(len(F10_list), n + 1):
-        F10_list.append(f_10(n//10))
+        F10_list.append(f_10(i//10))
     if n == 0:
-        return 0
+        return F10_list[n]
     elif n > 0 and n % 2 == 0:
         return F10_list[n] + n % 10
     elif n % 2 == 1:
         return F10_list[n]
 
 
-f8_list = [10]
+for i in range(10**9, 2 * 10**9 + 1):
+
+
+
+f8_list = [10] * 11
 
 def f_8(n):
-    if n < 11:
-        return 10
+    if n >= len(f8_list):
+        for i in range(len(f8_list), n + 1):
+            f8_list.append(f_8(i - 1))
+        return n + f8_list[n]
     else:
-        for i in range(len(f8_list), n - 9):
-            f8_list.append(f_8(n - 1))
-        return n + f8_list[n - 10]
-
+        return f8_list[n]
 
 def f_6(n):
     if n == 0:
@@ -104,12 +107,9 @@ for n in range(1, 501):
         counter += 1
 print(6, counter)
 print(7, f_7(18))
-# print(f_8(990))
-# print(f_8(2021))
-# print(f_8(2019))
-# print(8, f_8(2021) - f_8(2019))
+print(8, f_8(2021) - f_8(2019))
 print(9, f_9(998)/f_9(1001))
-counter = 0
+# counter = 0
 # for k in range(10**9, 2 * 10**9 + 1):
 #     if f_10(k) == 0:
 #         counter += 1
