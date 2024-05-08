@@ -8,3 +8,27 @@ decoded_message = ''
 for i in range(len(encoded_symbols)):
     decoded_message += f'{symbols[encoded_symbols[i]]}'
 print(decoded_message)
+
+
+expected_users = 1000
+
+users_by_day = [817, 1370, 752, 1247, 681, 1120, 915, 1281, 875, 1341, 757, 610, 812, 1170, 769, 1261, 845, 1289, 515,
+                1247, 845, 1311, 741, 1239, 812, 638, 877, 1242, 1159, 1372]
+
+all_u = 0
+max_u = 0
+min_u = users_by_day[0]
+
+for i in range(0, len(users_by_day)):
+    print('посещаемость в день', i + 1, users_by_day[i])
+    all_u += users_by_day[i]
+
+    if max_u < users_by_day[i]:
+        max_u = users_by_day[i]
+    elif min_u > users_by_day[i]:
+        min_u = users_by_day[i]
+
+
+middle_u = all_u/len(users_by_day)
+
+
