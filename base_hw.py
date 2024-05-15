@@ -31,4 +31,6 @@ for i in range(0, len(users_by_day)):
 
 middle_u = all_u/len(users_by_day)
 
-
+print('Минимальное значение:', min_u)
+print('Максимальное значение:', max_u)
+print('Среднее значение:', middle_u)
